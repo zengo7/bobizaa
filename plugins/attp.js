@@ -2,37 +2,37 @@ import fetch from 'node-fetch'
 import { sticker, addExif } from '../lib/sticker.js'
 import { Sticker } from 'wa-sticker-formatter'
 let handler = async(m, { conn, text, args, usedPrefix, command }) => {
-if (!text) throw `*تحويل كلمة او نص لملصق*\n\n*—◉ مثال:*\n*◉ ${usedPrefix + command} Bobiza-Bot*`
+if (!text) throw `*⊱┇تحويل كلام الي ملصق┇⊰*\n\n*⟣「مثال」*\n*◉ ${usedPrefix + command}𝒁𝑨𝑪𝑲*`
 let teks = encodeURI(text)
 
-if (command == 'attp') {
+if (command == 'ستك') {
 let a1 = await (await fetch(`https://api.erdwpe.com/api/maker/attp?text=${teks}`)).buffer()
 let a2 = await createSticker(a1, false, global.packname, global.author)
 conn.sendFile(m.chat, a2, 'sticker.webp', '', m, { asSticker: true })}
 
-if (command == 'attp2') {
+if (command == 'ستك2') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
     
-if (command == 'attp3') {
+if (command == 'ستك3') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp2?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
 
-if (command == 'ttp5') {
+if (command == 'ستك5') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp6?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
     
-if (command == 'ttp4') {
+if (command == 'ستكر4') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp5?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
     
-if (command == 'ttp3') {
+if (command == 'ستكر3') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp3?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
     
-if (command == 'ttp2') {
+if (command == 'ستكر2') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp2?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
     
-if (command == 'ttp') {
+if (command == 'ستكر') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
     
 }
-handler.command = handler.help = ['attp']
+handler.command = handler.help = ['ستكر', 'ستكر2', 'ستكر3', 'ستكر4', 'ستك5', 'ستك', 'ستك2', 'ستك3']
 handler.tags = ['sticker']
 export default handler
 
